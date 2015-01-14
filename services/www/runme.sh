@@ -1,8 +1,11 @@
 #!/bin/sh
-docker stop static 
-docker rm static 
-docker run --name static -d -p 3000:3000 -p 2222:22 -v ~/.ssh:/root/.ssh static
+docker stop www 
+docker rm www 
+sleep 1
+docker run --name www -d -p 3000:3000 -p 2222:22 www
 docker ps
-docker logs static
-
+sleep 1
+docker logs www
+sleep 1
 echo you can now open your browser at : http://163.173.197.69:3000/
+sleep 3

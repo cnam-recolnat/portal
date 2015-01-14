@@ -1,11 +1,11 @@
 #!/bin/bash
 #-------------------------------------------------------------------------8<-------------------------------------------------------------------------
 cd /tmp
-rm -rf portal/sources/html/
-
-#TODO extract seed
-git clone recolnat@217.70.188.184:/home/recolnat/git/portal
-
+rm -rf portal
+mkdir portal
+cd portal
+git init
+git pull https://80b72d58e6590479ba3741e90c9f3422d4a35cbc@github.com/cnam-recolnat/portal.git
 cd portal/sources/html/
 #-------------------------------------------------------------------------8<-------------------------------------------------------------------------
 npm install
