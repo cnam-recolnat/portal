@@ -1,0 +1,11 @@
+@import url(common.css);
+
+.time {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.time {
+	font-size: 135%;
+}

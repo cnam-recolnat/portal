@@ -1,0 +1,24 @@
+.header>.self {
+	height: 100%;
+	background-color: white;
+}
+
+.header img.icon {
+	float: left;
+	height: 100%;
+	opacity: 0.72;
+	vertical-align: middle;
+}
+
+.header  .bar {
+	text-align: center;
+	font-size: 135%;
+}
+
+.header .blocks {
+}
+
+.header .blocks>section {
+	float: right;
+	margin-right: 8px;
+}

@@ -1,0 +1,11 @@
+@import url(common.css);
+
+.header {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.header {
+	height: 6%;
+}

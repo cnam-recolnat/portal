@@ -1,0 +1,14 @@
+@import url(common.css);
+
+.main {
+	height: 88%;
+}
+
+.header,.footer {
+	min-height: 33px;
+	height: 6%;
+}
+
+.home > .self {
+	height: 100%;
+}

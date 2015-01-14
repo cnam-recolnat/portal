@@ -1,0 +1,12 @@
+.footer > .self {
+	height: 100%;
+	background-color: white;
+	text-align: center;
+}
+
+.footer img {
+	height: 70%;
+	opacity: 0.72;
+	vertical-align: middle;
+	margin-right: 8px;
+}

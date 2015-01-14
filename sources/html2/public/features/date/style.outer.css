@@ -1,0 +1,11 @@
+@import url(common.css);
+
+.date {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.date {
+	font-size: 135%;
+}

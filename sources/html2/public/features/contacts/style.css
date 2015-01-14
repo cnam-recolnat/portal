@@ -1,0 +1,26 @@
+.contacts > .self {
+	height: 100%;
+	border-left: 1px solid white;
+	background-color: rgb(64,137,200);	
+	overflow: auto;
+}
+
+.contacts .contact {
+	height: 5%;
+	min-height: 56px;
+	border-bottom: 1px solid white;
+}
+
+.contacts .name {
+	color: white;
+	font-size: 80%;
+}
+
+.contacts img {
+	height: 56px;
+	opacity: 0.95;
+	vertical-align: middle;
+	margin-top: 2px;
+	margin-right: 4px;
+	margin-left: 4px;
+}
