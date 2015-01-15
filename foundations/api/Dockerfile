@@ -24,7 +24,7 @@ RUN		    echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu precise main
 # Scala Build Tools aka SBT
 #-----------------------------------------------------------8<----------------------------------------------------------
 RUN			echo "deb http://dl.bintray.com/sbt/debian /" > /etc/apt/sources.list.d/sbt.list && \
-			apt-get update && apt-get install sbt
+			apt-get install -y -q --force-yes sbt
 #-----------------------------------------------------------8<----------------------------------------------------------
 # Cleaning
 #-----------------------------------------------------------8<----------------------------------------------------------
