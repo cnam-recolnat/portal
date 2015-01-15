@@ -21,6 +21,11 @@ RUN		    echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu precise main
 		    echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections && \
 		    apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y -q oracle-java8-installer
 #-----------------------------------------------------------8<----------------------------------------------------------
+# Scala Build Tools aka SBT
+#-----------------------------------------------------------8<----------------------------------------------------------
+RUN			echo "deb http://dl.bintray.com/sbt/debian /" > /etc/apt/sources.list.d/sbt.list && \
+			apt-get update && apt-get install sbt
+#-----------------------------------------------------------8<----------------------------------------------------------
 # Cleaning
 #-----------------------------------------------------------8<----------------------------------------------------------
 RUN			apt-get autoclean && apt-get autoremove
