@@ -1,23 +1,37 @@
-# Docker-Spray example
-# VERSION 1.0
-
-# the base image is a trusted ubuntu build with java 7 (https://index.docker.io/u/dockerfile/java/)
-FROM dockerfile/java
-
-# that's me!
-MAINTAINER Adam Warski, adam@warski.org
-
-# we need this because the workdir is modified in dockerfile/java
-WORKDIR /
-
-# run the (java) server as the daemon user
-USER daemon
-
-# copy the locally built fat-jar to the image
-ADD target/scala-2.11/docker-spray-example-assembly-1.0.jar /app/server.jar
-
-# run the server when a container based on this image is being run
-ENTRYPOINT [ "java", "-jar", "/app/server.jar" ]
-
-# the server binds to 8080 - expose that port
-EXPOSE 8080
+#-----------------------------------------------------------8<----------------------------------------------------------
+# Base with SSH support
+#-----------------------------------------------------------8<----------------------------------------------------------
+FROM		tutum/debian-wheezy
+MAINTAINER	Arie Benichou <arie.benichou@gmail.com>
+#-----------------------------------------------------------8<----------------------------------------------------------
+# System Tools
+#-----------------------------------------------------------8<----------------------------------------------------------
+RUN			apt-get update && \
+			DEBIAN_FRONTEND=noninteractive apt-get dist-upgrade -y -q && \
+			DEBIAN_FRONTEND=noninteractive  apt-get install -y -q \
+		  		curl \
+		  		git \
+		  		rsync
+#-----------------------------------------------------------8<----------------------------------------------------------
+# Java Virtual Machine
+#-----------------------------------------------------------8<----------------------------------------------------------
+RUN		    echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu precise main" \
+            > /etc/apt/sources.list.d/webupd8team-java.list && \
+		    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys EEA14886 && \
+		    echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections && \
+		    apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y -q oracle-java8-installer
+#-----------------------------------------------------------8<----------------------------------------------------------
+# Cleaning
+#-----------------------------------------------------------8<----------------------------------------------------------
+RUN			apt-get autoclean && apt-get autoremove
+#-----------------------------------------------------------8<----------------------------------------------------------
+# Workspace
+#-----------------------------------------------------------8<----------------------------------------------------------
+ADD			./⁄/root/ /root/
+RUN			chmod -R +x /root/*
+#-----------------------------------------------------------8<----------------------------------------------------------
+# Main
+#-----------------------------------------------------------8<----------------------------------------------------------
+EXPOSE 22
+ENTRYPOINT  ["/root/main.sh"]
+#-----------------------------------------------------------8<----------------------------------------------------------
