@@ -8,7 +8,7 @@ sbt			:
 first-run	:	sbt run
 				docker ps
 
-run 		:   stop
+run 		:
 				docker run --name api --restart always -d -p 8080:8080 -p 4444:22 --volumes-from sbt-artifacts api
 
 stop		:
