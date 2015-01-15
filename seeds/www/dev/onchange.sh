@@ -1,4 +1,3 @@
- 
 #!/bin/bash
 #
 # Watch current directory (recursively) for file changes, and execute
