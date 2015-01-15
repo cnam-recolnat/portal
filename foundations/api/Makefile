@@ -1,8 +1,12 @@
-build	:
-			docker build -t api .
-run 	:
-			docker run --name api --restart always -d -p 9000:9000 -p 4444:22 api
-logs	:
-			docker logs api
-clean	:
-			docker stop api && docker rm api && docker rmi api
+build		:
+				docker build -t api .
+sbt			:
+				docker run -v /root/.ivy2 --name sbt-artifacts busybox true
+first-run	:	sbt run
+				docker ps
+run 		:
+				docker run --name api --restart always -d -p 9000:9000 -p 4444:22 --volumes-from sbt-artifacts api
+logs		:
+				docker logs api
+clean		:
+				docker stop api && docker rm api && docker rmi api
