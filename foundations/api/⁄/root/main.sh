@@ -9,7 +9,7 @@ echo $(sbt -v)
 #-----------------------------------------------------------8<----------------------------------------------------------
 nohup sbt ~run > api.log &
 tail -f api.log & until nc -z localhost 8080; do sleep 1; done
-wget -v -nc -t 2 -T 333 localhost:8080
+wget -v -nc -t 2 -T 333 localhost:8080/hello
 #-----------------------------------------------------------8<----------------------------------------------------------
 echo "root:abracadabra" | chpasswd
 exec /usr/sbin/sshd -D
