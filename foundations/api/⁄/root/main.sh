@@ -4,7 +4,7 @@ mkdir seed && cd seed && git init
 git pull https://80b72d58e6590479ba3741e90c9f3422d4a35cbc@github.com/cnam-recolnat/portal.git
 cd seeds/api/
 #-----------------------------------------------------------8<----------------------------------------------------------
-echo java -version
+echo $(java -version)
 #-----------------------------------------------------------8<----------------------------------------------------------
 echo "root:abracadabra" | chpasswd
 exec /usr/sbin/sshd -D
