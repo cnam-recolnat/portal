@@ -4,7 +4,7 @@ build:
 	docker build -t www .
 
 run:
-	docker run --name www -d -p 3000:3000 -p 2222:22 www
+	docker run --name www --restart always -d -p 3000:3000 -p 2222:22 www
 
 stop:
 	docker stop www
