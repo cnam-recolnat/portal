@@ -15,7 +15,7 @@ stop		:
 				docker stop api && docker rm api
 
 logs		:
-				docker logs api
+				docker logs -f api
 
 clean		:
 				docker stop api && docker rm api && docker rmi api
