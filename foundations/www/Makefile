@@ -16,4 +16,4 @@ delete : stop
 clean : delete
     docker rmi www
 
-restart :   delete start logs
+restart : delete start logs
