@@ -1,7 +1,7 @@
 IS_VOLUME_MOUNTED = $(shell docker inspect sbt-artifacts)
 
 build :
-        docker build -t api .
+	docker build -t api .
 
 volumes :
     ifneq (,$(filter [{%,$(IS_VOLUME_MOUNTED)))
