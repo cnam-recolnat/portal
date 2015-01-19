@@ -11,7 +11,7 @@ volumes :
 	docker run -v /root/.ivy2 --name sbt-artifacts busybox true
     endif
 
-start : volumes
+start : build volumes
 	docker run --name api --restart always -d -p 8080:8080 -p 4444:22 --volumes-from sbt-artifacts api
 
 logs :

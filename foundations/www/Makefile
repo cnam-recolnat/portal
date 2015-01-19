@@ -1,7 +1,7 @@
 build: delete
 	docker build -t www .
 
-start:
+start: build
 	docker run --name www --restart always -d -p 3000:3000 -p 2222:22 www
 
 logs:
