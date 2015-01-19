@@ -1,7 +1,7 @@
 #!/bin/bash
 #-----------------------------------------------------------8<----------------------------------------------------------
 haproxy -vv
-cp haproxy.cfg /etc/haproxy/haproxy.cfg
+cp /root/haproxy.cfg /etc/haproxy/haproxy.cfg
 #-----------------------------------------------------------8<----------------------------------------------------------
 echo "root:abracadabra" | chpasswd
 exec /usr/sbin/sshd -D
