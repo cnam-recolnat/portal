@@ -1,5 +1,3 @@
-import sbtassembly.Plugin.AssemblyKeys._
-
 name := "docker-spray-example"
 
 version := "1.0"
@@ -22,4 +20,4 @@ libraryDependencies ++= Seq(
   "ch.qos.logback" % "logback-classic" % "1.1.2"
 )
 
-assemblySettings
+Revolver.settings

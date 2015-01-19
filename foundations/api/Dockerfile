@@ -9,6 +9,7 @@ MAINTAINER	Arie Benichou <arie.benichou@gmail.com>
 RUN			apt-get update && \
 			DEBIAN_FRONTEND=noninteractive apt-get dist-upgrade -y -q && \
 			DEBIAN_FRONTEND=noninteractive  apt-get install -y -q \
+				nano \
 		  		curl \
 		  		git \
 				netcat \
