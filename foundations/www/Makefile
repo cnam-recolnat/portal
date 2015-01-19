@@ -10,11 +10,10 @@ logs:
 stop:
 	docker stop www
 
-delete:
+delete: stop
 	docker rm www
 
-clean:
+clean: delete
 	docker rmi www
 
-restart:
-	delete start logs
+restart: delete start logs
