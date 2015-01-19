@@ -18,8 +18,8 @@ RUN			apt-get update && apt-get dist-upgrade -y -q && \
 #-----------------------------------------------------------8<----------------------------------------------------------
 # HAProxy
 #-----------------------------------------------------------8<----------------------------------------------------------
-RUN			echo "deb http://http.debian.net/debian wheezy-backports main" > /etc/apt/sources.list && \
-			apt-get update && apt-get install -y -q haproxy
+RUN			echo "deb http://http.debian.net/debian wheezy-backports main" > /etc/apt/sources.list.d/backports.list && \
+			apt-get update && apt-get install -y -q haproxy -t wheezy-backports
 #-----------------------------------------------------------8<----------------------------------------------------------
 # Cleaning
 #-----------------------------------------------------------8<----------------------------------------------------------
