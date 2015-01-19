@@ -8,7 +8,7 @@ cd seeds/api/
 echo $(java -version)
 echo $(sbt -v)
 #-----------------------------------------------------------8<----------------------------------------------------------
-nohup sbt ~run > api.log &
+nohup sbt ~re-start > api.log &
 tail -f api.log & until nc -z localhost 8080; do sleep 1; done
 wget -v -nc -t 2 -T 333 localhost:8080/hello
 #-----------------------------------------------------------8<----------------------------------------------------------
