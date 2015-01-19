@@ -1,4 +1,4 @@
-build:
+build: delete
 	docker build -t www .
 
 start:
