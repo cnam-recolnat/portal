@@ -1,5 +1,7 @@
 IS_VOLUME_MOUNTED = $(shell docker inspect sbt-artifacts)
 
+default: start
+
 build : delete
 	docker build -t api .
 

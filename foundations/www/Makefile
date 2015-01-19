@@ -1,3 +1,5 @@
+default: start
+
 build: delete
 	docker build -t www .
 
