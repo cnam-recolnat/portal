@@ -11,6 +11,7 @@ RUN			apt-get update && apt-get dist-upgrade -y -q && \
 				locate \
 				nano \
 		  		curl \
+		  		wget \
 		  		git \
 				netcat \
 		  		net-tools \
