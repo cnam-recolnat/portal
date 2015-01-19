@@ -8,6 +8,7 @@ MAINTAINER	Arie Benichou <arie.benichou@gmail.com>
 #-----------------------------------------------------------8<----------------------------------------------------------
 RUN			apt-get update && apt-get dist-upgrade -y -q && \
 			apt-get install -y -q \
+				locate \
 				nano \
 		  		curl \
 		  		git \
