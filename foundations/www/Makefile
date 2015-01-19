@@ -8,12 +8,12 @@ logs:
 	docker logs -f www
 
 stop:
-	docker stop www
+	-docker stop www
 
 delete: stop
-	docker rm www
+	-docker rm www
 
 clean: delete
-	docker rmi www
+	-docker rmi www
 
 restart: delete start logs

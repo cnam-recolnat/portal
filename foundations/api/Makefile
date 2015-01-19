@@ -14,16 +14,16 @@ volumes :
 start : volumes
 	docker run --name api --restart always -d -p 8080:8080 -p 4444:22 --volumes-from sbt-artifacts api
 
-stop :
-	docker stop api
-
-delete : stop
-	docker rm api
-
 logs :
 	docker logs -f api
 
+stop :
+	-docker stop api
+
+delete : stop
+	-docker rm api
+
 clean : delete
-	docker rmi api
+	-docker rmi api
 
 restart : delete start logs
