@@ -23,6 +23,11 @@ RUN			apt-get update && apt-get dist-upgrade -y -q && \
 RUN			echo "deb http://http.debian.net/debian wheezy-backports main" > /etc/apt/sources.list.d/backports.list && \
 			apt-get update && apt-get install -y -q haproxy -t wheezy-backports
 #-----------------------------------------------------------8<----------------------------------------------------------
+# etcd
+#-----------------------------------------------------------8<----------------------------------------------------------
+RUN			curl -L  https://github.com/coreos/etcd/releases/download/v2.0.0-rc.1/etcd-v2.0.0-rc.1-linux-amd64.tar.gz \
+				-o etcd-v2.0.0-rc.1-linux-amd64.tar.gz && tar xzvf etcd-v2.0.0-rc.1-linux-amd64.tar.gz
+#-----------------------------------------------------------8<----------------------------------------------------------
 # Cleaning
 #-----------------------------------------------------------8<----------------------------------------------------------
 RUN			apt-get autoclean && apt-get autoremove
