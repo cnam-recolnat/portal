@@ -5,4 +5,4 @@ keys = [
     "/myapp/database/url",
     "/myapp/database/user",
 ]
-reload_cmd = "service haproxy reload"
+reload_cmd = "service haproxy stop"
