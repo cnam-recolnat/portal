@@ -30,7 +30,8 @@ RUN			curl -L  https://github.com/coreos/etcd/releases/download/v2.0.0-rc.1/etcd
 #-----------------------------------------------------------8<----------------------------------------------------------
 RUN			wget https://github.com/kelseyhightower/confd/releases/download/v0.6.3/confd-0.6.3-linux-amd64 && \
 				mv confd-0.6.3-linux-amd64 /usr/local/bin/confd && \
-				chmod +x /usr/local/bin/confd
+				chmod +x /usr/local/bin/confd && \
+				mkdir -p /etc/confd/{conf.d,templates}
 #-----------------------------------------------------------8<----------------------------------------------------------
 # Cleaning
 #-----------------------------------------------------------8<----------------------------------------------------------
