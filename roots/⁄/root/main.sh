@@ -7,8 +7,12 @@ cd etcd-v2.0.0-rc.1-linux-amd64
 nohup ./etcd &
 ./etcd --version
 #-----------------------------------------------------------8<----------------------------------------------------------
+curl -L -X PUT http://127.0.0.1:4001/myapp/database/url -d value="db.example.com"
+curl -L -X PUT http://127.0.0.1:4001/myapp/database/user -d value="rob"
+#-----------------------------------------------------------8<----------------------------------------------------------
 which confd
 confd -onetime -backend etcd -node 127.0.0.1:4001
+cat /tmp/myconfig.conf
 #-----------------------------------------------------------8<----------------------------------------------------------
 echo "root:abracadabra" | chpasswd
 exec /usr/sbin/sshd -D
