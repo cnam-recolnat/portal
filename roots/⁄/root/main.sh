@@ -1,7 +1,12 @@
 #!/bin/bash
 #-----------------------------------------------------------8<----------------------------------------------------------
-haproxy -v
-haproxy -f /root/haproxy.cfg
+#haproxy -v
+# -p writes pids of all children to this file
+# -sf/-st [pid ]* finishes/terminates old pids. Must be last arguments.
+#haproxy -f haproxy.cfg -p /var/run/haproxy.pid -sf $(cat /var/run/haproxy.pid)
+service haproxy status
+service haproxy start
+service haproxy status
 #-----------------------------------------------------------8<----------------------------------------------------------
 cd etcd-v2.0.0-rc.1-linux-amd64
 ./etcd --version
