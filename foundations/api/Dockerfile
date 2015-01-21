@@ -9,10 +9,13 @@ MAINTAINER	Arie Benichou <arie.benichou@gmail.com>
 RUN			apt-get update && \
 			DEBIAN_FRONTEND=noninteractive apt-get dist-upgrade -y -q && \
 			DEBIAN_FRONTEND=noninteractive  apt-get install -y -q \
+				locate \
 				nano \
 		  		curl \
+		  		wget \
 		  		git \
 				netcat \
+				nmap \
 		  		net-tools \
 		  		lsof \
 		  		rsync
@@ -33,6 +36,10 @@ RUN			echo "deb http://dl.bintray.com/sbt/debian /" > /etc/apt/sources.list.d/sb
 # Cleaning
 #-----------------------------------------------------------8<----------------------------------------------------------
 RUN			apt-get autoclean && apt-get autoremove
+#-----------------------------------------------------------8<----------------------------------------------------------
+# Indexing
+#-----------------------------------------------------------8<----------------------------------------------------------
+RUN			updatedb
 #-----------------------------------------------------------8<----------------------------------------------------------
 # Workspace
 #-----------------------------------------------------------8<----------------------------------------------------------
