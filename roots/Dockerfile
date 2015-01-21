@@ -14,6 +14,7 @@ RUN			apt-get update && apt-get dist-upgrade -y -q && \
 		  		wget \
 		  		git \
 				netcat \
+				nmap \
 		  		net-tools \
 		  		lsof \
 		  		rsync
