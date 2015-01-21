@@ -25,10 +25,13 @@ curl -L -X PUT http://127.0.0.1:4001/v2/keys/myapp/database/user -d value="rob"
 curl -L http://127.0.0.1:4001/v2/keys/myapp/database/url
 curl -L http://127.0.0.1:4001/v2/keys/myapp/database/user
 #-----------------------------------------------------------8<----------------------------------------------------------
+ps aux | grep haproxy
 which confd
+ps aux | grep haproxy
 confd -onetime -backend etcd -node 127.0.0.1:4001
 ps aux | grep haproxy
 cat /tmp/myconfig.conf
+ps aux | grep haproxy
 #-----------------------------------------------------------8<----------------------------------------------------------
 echo "root:abracadabra" | chpasswd
 exec /usr/sbin/sshd -D
