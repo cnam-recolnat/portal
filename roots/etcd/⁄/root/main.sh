@@ -1,10 +1,12 @@
 #!/bin/bash
 #-----------------------------------------------------------8<----------------------------------------------------------
-ip=$(ifconfig eth0 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}')
-echo "$ip is alive !"
+#ip=$(ifconfig eth0 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}')
+#echo "$ip is alive !"
 #-----------------------------------------------------------8<----------------------------------------------------------
-cd etcd-v2.0.0-rc.1-linux-amd64 && nohup ./etcd --advertise-client-urls=http://${ip}:4001 &
-sleep 5 && curl -L http://127.0.0.1:4001/version
+cd etcd-v2.0.0-rc.1-linux-amd64
+nohup ./etcd &
+#--advertise-client-urls=http://${ip}:4001 &
+#sleep 5 && curl -L http://127.0.0.1:4001/version
 #-----------------------------------------------------------8<----------------------------------------------------------
 echo "root:abracadabra" | chpasswd
 exec /usr/sbin/sshd -D

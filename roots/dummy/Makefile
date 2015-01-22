@@ -2,7 +2,7 @@ build : delete
 	docker build -t dummy .
 
 start : build
-	docker run --name dummy --restart always -d  -p 3333:22 --link etcd:etcd dummy
+	docker run --name dummy --restart always --net=host -p 3333:22 -d dummy
 
 logs :
 	docker logs -f dummy
