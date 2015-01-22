@@ -4,5 +4,3 @@ add more granularity to haproxy template :
 	-options
 	-load-balancing
 	-etc...
-
-separate etcd, confd and haproxy
