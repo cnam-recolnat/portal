@@ -1,0 +1,9 @@
+[confd]
+confdir  = "/etc/confd"
+interval = 600
+prefix   = "/"
+etcd_nodes = [
+  "http://127.0.0.1:4001",
+]
+#client_cert = "/etc/confd/ssl/client.crt"
+#client_key  = "/etc/confd/ssl/client.key"

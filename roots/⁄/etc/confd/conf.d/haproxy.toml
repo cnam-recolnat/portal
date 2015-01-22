@@ -1,0 +1,8 @@
+[template]
+src = "haproxy.conf.tmpl"
+dest = "/etc/haproxy/haproxy.cfg"
+keys = [
+    "/myapp/www",
+    "/myapp/api",
+]
+reload_cmd = "service haproxy reload"

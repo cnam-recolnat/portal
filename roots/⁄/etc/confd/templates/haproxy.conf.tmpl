@@ -1,0 +1,37 @@
+global
+		log 127.0.0.1 local0
+		maxconn 4096
+		daemon
+
+defaults
+		log global
+		mode http
+		option httplog
+		option dontlognull
+		retries 3
+		option redispatch
+		maxconn 2000
+
+listen frontend 0.0.0.0:9090
+		mode http
+		stats enable
+		stats refresh 1s
+		stats uri /haproxy
+		balance roundrobin
+		option httpclose
+		option forwardfor
+
+frontend http-in
+		bind *:80
+		acl is_api path_beg -i /api/
+		use_backend api if is_api
+		default_backend www
+
+backend www
+		option forwardfor
+		server server1 {{getv "/myapp/www"}}:3000
+
+backend api
+		reqrep ^([^\ :]*)\ /api/(.*)	 \1\ /\2
+		option forwardfor
+		server {{getv "/myapp/api"}} 172.17.0.4:8080

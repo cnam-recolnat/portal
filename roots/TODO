@@ -1,0 +1,8 @@
+add more granularity to haproxy template :
+	-port
+	-regexp
+	-options
+	-load-balancing
+	-etc...
+
+separate etcd, confd and haproxy
