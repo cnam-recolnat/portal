@@ -1,23 +1,23 @@
 build : delete
-	docker build -t consul .
+	docker build -t node1 .
 
 start : build
-	docker run --name node1 \
+	docker run -d --name node1 \
 		-p 8300:8300 -p 8301:8301 -p 8301:8301/udp -p 8302:8302 -p 8302:8302/udp -p 8400:8400 -p 8500:8500 -p 8600:53/udp \
 		-v /data:/data \
 		--hostname node1 \
-		consul -server -bootstrap-expect 1
+		node1 -server -bootstrap-expect 1
 
 logs :
-	docker logs -f consul
+	docker logs -f node1
 
 stop :
-	-docker stop consul
+	-docker stop node1
 
 delete : stop
-	-docker rm consul
+	-docker rm node1
 
 clean : delete
-	-docker rmi consul
+	-docker rmi node1
 
-restart : delete start consul
+restart : delete start node1
