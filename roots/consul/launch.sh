@@ -11,6 +11,5 @@ consul agent \
 	-config-dir=/config \
 	-server \
 	-bootstrap \
-	-bootstrap-expect 1 \
 	-bind=$ip
 
