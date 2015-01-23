@@ -8,6 +8,9 @@ echo $ip
 #arping -U -c2 -A -s $ip -I eth0 0.0.0.0
 ip -s -s neigh flush all
 #-----------------------------------------------------------8<----------------------------------------------------------
+ip link set arp off dev eth0
+ip link set arp on dev eth0
+#-----------------------------------------------------------8<----------------------------------------------------------
 echo "Starting consul agent"
 nohup consul agent \
 	-config-dir=/config \
