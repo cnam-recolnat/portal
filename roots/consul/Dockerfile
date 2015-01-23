@@ -19,7 +19,7 @@ RUN			apt-get update && apt-get dist-upgrade -y -q && \
 		  		rsync \
 		  		unzip
 #-----------------------------------------------------------8<----------------------------------------------------------
-ADD			https://dl.bintray.com/mitchellh/consul/0.4.1_web_ui.zip /tmp/consul.zip
+ADD			https://dl.bintray.com/mitchellh/consul/0.4.1_linux_amd64.zip /tmp/consul.zip
 RUN 		cd /bin && unzip /tmp/consul.zip && chmod +x /bin/consul && rm /tmp/consul.zip
 #-----------------------------------------------------------8<----------------------------------------------------------
 ADD			https://dl.bintray.com/mitchellh/consul/0.4.1_web_ui.zip /tmp/webui.zip
