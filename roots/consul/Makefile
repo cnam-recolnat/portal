@@ -3,7 +3,7 @@ build : delete
 
 start : build
 	docker run -d --name node1 \
-		-p 8300:8300 -p 8301:8301 -p 8301:8301/udp -p 8302:8302 -p 8302:8302/udp -p 8400:8400 -p 8500:8500 -p 8600:53/udp \
+		-p 1111:22 -p 8300:8300 -p 8301:8301 -p 8301:8301/udp -p 8302:8302 -p 8302:8302/udp -p 8400:8400 -p 8500:8500 -p 8600:53/udp \
 		-v /data:/data \
 		--hostname node1 \
 		node1
