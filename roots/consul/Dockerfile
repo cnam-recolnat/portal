@@ -20,7 +20,7 @@ RUN			apt-get update && apt-get dist-upgrade -y -q && \
 		  		unzip
 #-----------------------------------------------------------8<----------------------------------------------------------
 ADD			https://dl.bintray.com/mitchellh/consul/0.4.1_web_ui.zip /tmp/consul.zip
-RUN 		cd /bin && unzip /tmp/consul.zip && chmod +x consul && rm /tmp/consul.zip
+RUN 		cd /bin && unzip /tmp/consul.zip && chmod +x /bin/consul && rm /tmp/consul.zip
 #-----------------------------------------------------------8<----------------------------------------------------------
 ADD			https://dl.bintray.com/mitchellh/consul/0.4.1_web_ui.zip /tmp/webui.zip
 RUN			cd /tmp && unzip /tmp/webui.zip && mv dist /ui && rm /tmp/webui.zip
