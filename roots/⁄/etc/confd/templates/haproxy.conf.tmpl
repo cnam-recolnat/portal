@@ -34,4 +34,4 @@ backend www
 backend api
 		reqrep ^([^\ :]*)\ /api/(.*)	 \1\ /\2
 		option forwardfor
-		server {{getv "/myapp/api"}} 172.17.0.4:8080
+		server server2 {{getv "/myapp/api"}}:8080
