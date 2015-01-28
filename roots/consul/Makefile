@@ -11,7 +11,7 @@ volumes :
 	docker run -v /data --name consul-data busybox true
     endif
 
-start : build, volumes
+start : build volumes
 	docker run						\
 		--name node1				\
 		--hostname node1			\
